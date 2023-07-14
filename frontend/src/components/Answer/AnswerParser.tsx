@@ -8,7 +8,9 @@ type ParsedAnswer = {
 };
 
 export function parseAnswer(answer: AskResponse): ParsedAnswer {
+    console.log(answer)
     let answerText = answer.answer;
+    console.log(answerText)
     const citationLinks = answerText.match(/\[(doc\d\d?\d?)]/g);
 
     const lengthDocN = "[doc".length;

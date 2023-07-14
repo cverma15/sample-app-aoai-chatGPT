@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from "rehype-raw"; 
 
 import styles from "./Chat.module.css";
-import Azure from "../../assets/Azure.svg";
+import Azure from "../../assets/meesho-jamun-logo.png";
 
 import {
     ChatMessage,
@@ -173,8 +173,7 @@ const Chat = () => {
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>Start chatting</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>This chatbot is configured to answer your questions</h2>
+                                <h1 className={styles.chatEmptyStateTitle}>Let's find that Perfect Gift</h1>
                             </Stack>
                         ) : (
                             <div className={styles.chatMessageStream} style={{ marginBottom: isLoading ? "40px" : "0px"}} role="log">
@@ -211,7 +210,7 @@ const Chat = () => {
                                         <div className={styles.chatMessageGpt}>
                                             <Answer
                                                 answer={{
-                                                    answer: "Generating answer...",
+                                                    answer: "...",
                                                     citations: []
                                                 }}
                                                 onCitationClicked={() => null}
@@ -224,21 +223,21 @@ const Chat = () => {
                         )}
 
                         <Stack horizontal className={styles.chatInput}>
-                            {isLoading && (
-                                <Stack 
-                                    horizontal
-                                    className={styles.stopGeneratingContainer}
-                                    role="button"
-                                    aria-label="Stop generating"
-                                    tabIndex={0}
-                                    onClick={stopGenerating}
-                                    onKeyDown={e => e.key === "Enter" || e.key === " " ? stopGenerating() : null}
-                                    >
-                                        <SquareRegular className={styles.stopGeneratingIcon} aria-hidden="true"/>
-                                        <span className={styles.stopGeneratingText} aria-hidden="true">Stop generating</span>
-                                </Stack>
-                            )}
-                            <div
+                            {/* {isLoading && (
+                                // <Stack 
+                                //     horizontal
+                                //     className={styles.stopGeneratingContainer}
+                                //     role="button"
+                                //     aria-label="Stop generating"
+                                //     tabIndex={0}
+                                //     onClick={stopGenerating}
+                                //     onKeyDown={e => e.key === "Enter" || e.key === " " ? stopGenerating() : null}
+                                //     >
+                                //         <SquareRegular className={styles.stopGeneratingIcon} aria-hidden="true"/>
+                                //         <span className={styles.stopGeneratingText} aria-hidden="true">Stop generating</span>
+                                // </Stack>
+                            )} */}
+                            {/* <div
                                 role="button"
                                 tabIndex={0}
                                 onClick={clearChat}
@@ -251,10 +250,10 @@ const Chat = () => {
                                             cursor: isLoading || answers.length === 0 ? "" : "pointer"}}
                                     aria-hidden="true"
                                 />
-                            </div>
+                            </div> */}
                             <QuestionInput
                                 clearOnSend
-                                placeholder="Type a new question..."
+                                placeholder="Help me find a gift for my nerd friend"
                                 disabled={isLoading}
                                 onSend={question => makeApiRequest(question)}
                             />
